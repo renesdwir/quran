@@ -18,10 +18,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} bg-slate-50 dark:bg-[#0d1117] duration-700`}
+        className={`${inter.className} bg-red-400 dark:bg-[#0d1117] duration-700`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <main>{children}</main>
+          <main className={`max-w-[37rem] bg-white mx-auto min-h-screen`}>
+            {children}
+          </main>
         </ThemeProvider>
       </body>
     </html>
