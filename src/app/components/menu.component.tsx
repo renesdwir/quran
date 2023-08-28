@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Menu = () => {
@@ -6,11 +7,12 @@ const Menu = () => {
     <main>
       <div className={` flex justify-between items-center`}>
         <p className={`font-bold`}>Baca Al-Qur'an</p>
-        <button
+        <Link
+          href="/bookmark"
           className={`bg-green-500 px-2 py-1 text-sm font-semibold rounded`}
         >
           Bookmark
-        </button>
+        </Link>
       </div>
       <div className={`mt-3 grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-4`}>
         <div
