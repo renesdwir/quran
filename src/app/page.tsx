@@ -1,11 +1,16 @@
 import Hero from "@/components/Hero";
-import TopTabs from "@/components/TopTabs";
+import Tabs from "@/components/Tab";
 
-export default function Home() {
+export default function Homepage({
+  searchParams,
+}: {
+  searchParams: { search?: string; page?: string };
+}) {
+  const search = searchParams?.search || "";
   return (
     <main className="">
-      <Hero />
-      <TopTabs />
+      <Hero search={search} />
+      <Tabs />
     </main>
   );
 }
