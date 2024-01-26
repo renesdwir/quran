@@ -29,8 +29,8 @@ export interface DataDetailSurah {
   deskripsi: string;
   audioFull: { [key: string]: string };
   ayat: Ayat[];
-  suratSelanjutnya: NextPrevSurah | boolean;
-  suratSebelumnya: NextPrevSurah | boolean;
+  suratSelanjutnya: NextPrevSurah;
+  suratSebelumnya: NextPrevSurah;
 }
 export interface Ayat {
   nomorAyat: number;
