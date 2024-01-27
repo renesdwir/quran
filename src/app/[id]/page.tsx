@@ -36,9 +36,9 @@ export default async function Page({ params }: { params: { id: string } }) {
               <p className="text-muted-foreground">{surah.arti}</p>
             </div>
             <div className="flex flex-col mt-14 gap-7 md:gap-14">
-              <Ayah />
-              <Ayah />
-              <Ayah />
+              {surah.ayat.map((data) => (
+                <Ayah key={data.nomorAyat} ayah={data} />
+              ))}
             </div>
             <div className="flex justify-between mt-5">
               {surah.suratSebelumnya ? (
