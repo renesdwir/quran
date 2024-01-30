@@ -9,7 +9,7 @@ export default function Ayah({ ayah }: { ayah: Ayat }) {
       <div className="flex justify-between md:gap-4 ">
         <div className="mt-1 md:mt-4">
           <div className="relative ">
-            <AyahFrame className="w-12 h-12 " />
+            <AyahFrame className="w-12 h-12  fill-foreground" />
             <p className="text-xs  font-bold absolute  w-12 text-center top-4">
               {ayah.nomorAyat}
             </p>
