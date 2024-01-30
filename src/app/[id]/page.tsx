@@ -1,4 +1,5 @@
 import Ayah from "@/components/ayah/Ayah";
+import FooterSurah from "@/components/footer/footerSurah";
 import { Button } from "@/components/ui/button";
 import { DataDetailSurah, ResponseListSurah } from "@/models/surah";
 import { MoveRight, MoveLeft, ChevronRight } from "lucide-react";
@@ -40,22 +41,12 @@ export default async function Page({ params }: { params: { id: string } }) {
                 <Ayah key={data.nomorAyat} ayah={data} />
               ))}
             </div>
-            <div className="flex justify-between mt-5">
-              {surah.suratSebelumnya ? (
-                <Button variant={"secondary"} className="flex items-center gap-3">
-                  <MoveLeft /> <p>{surah.suratSebelumnya.namaLatin}</p>
-                </Button>
-              ) : (
-                <div></div>
-              )}
-              {surah.suratSelanjutnya ? (
-                <Button variant={"secondary"} className="flex items-center gap-3">
-                  <p>{surah.suratSelanjutnya.namaLatin}</p> <MoveRight />
-                </Button>
-              ) : (
-                <div></div>
-              )}
-            </div>
+            <FooterSurah
+              suratSebelumnya={surah.suratSebelumnya}
+              suratSelanjutnya={surah.suratSelanjutnya}
+              nama={surah.namaLatin}
+              noSurah={surah.nomor}
+            />
           </div>
         </div>
       </div>
