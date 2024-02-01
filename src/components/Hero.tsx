@@ -1,6 +1,7 @@
 import Logo from "./icons/logo";
 import { Button } from "@/components/ui/button";
 import Search from "./search/Search";
+import Link from "next/link";
 
 export default function Hero({ search }: { search: string }) {
   return (
@@ -12,11 +13,21 @@ export default function Hero({ search }: { search: string }) {
           <Search search={search} />
         </div>
         <div className="flex flex-row flex-wrap justify-center gap-2 px-4">
-          <Button variant="outline">About The Quran</Button>
-          <Button variant="outline">Al Mulk</Button>
-          <Button variant="outline">Yaseen</Button>
-          <Button variant="outline">Al Kahf</Button>
-          <Button variant="outline">Al Waqi'ah</Button>
+          <Button variant="outline" asChild>
+            <Link href={"/67"}>Al-Mulk</Link>
+          </Button>
+          <Button variant="outline" asChild>
+            <Link href={"/36"}>Yasin</Link>
+          </Button>
+          <Button variant="outline" asChild>
+            <Link href={"/18"}>Al-Kahf</Link>
+          </Button>
+          <Button variant="outline" asChild>
+            <Link href={"/56"}>Al-Waqi'ah</Link>
+          </Button>
+          <Button variant="outline" asChild>
+            <Link href={"/55"}>Ar-Rahman</Link>
+          </Button>
         </div>
       </div>
     </>
