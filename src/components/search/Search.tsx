@@ -52,23 +52,23 @@ export default async function SearchComponent({ search }: { search: string }) {
                   <div className="mt-1">
                     <div className="flex items-center gap-4 hover:bg-accent  p-3 rounded-lg transition-all duration-200 cursor-pointer text-muted-foreground hover:text-accent-foreground">
                       <MoveRight className="w-4 h-4 text-muted-foreground" />
-                      <p className="text-sm">Al Waqi'ah</p>
+                      <p className="text-sm">Al-Waqi'ah</p>
                     </div>
                     <div className="flex items-center gap-4 hover:bg-accent  p-3 rounded-lg transition-all duration-200 cursor-pointer text-muted-foreground hover:text-accent-foreground">
                       <MoveRight className="w-4 h-4 text-muted-foreground" />
-                      <p className="text-sm">Al Mulk</p>
+                      <p className="text-sm">Al-Mulk</p>
                     </div>
                     <div className="flex items-center gap-4 hover:bg-accent  p-3 rounded-lg transition-all duration-200 cursor-pointer text-muted-foreground hover:text-accent-foreground">
                       <MoveRight className="w-4 h-4 text-muted-foreground" />
-                      <p className="text-sm">Yaseen</p>
+                      <p className="text-sm">Yasin</p>
                     </div>
                     <div className="flex items-center gap-4 hover:bg-accent  p-3 rounded-lg transition-all duration-200 cursor-pointer text-muted-foreground hover:text-accent-foreground">
                       <MoveRight className="w-4 h-4 text-muted-foreground" />
-                      <p className="text-sm">Al Khaf</p>
+                      <p className="text-sm">Al-Khaf</p>
                     </div>
                     <div className="flex items-center gap-4 hover:bg-accent  p-3 rounded-lg transition-all duration-200 cursor-pointer text-muted-foreground hover:text-accent-foreground">
                       <MoveRight className="w-4 h-4 text-muted-foreground" />
-                      <p className="text-sm">Ar Rahman</p>
+                      <p className="text-sm">Ar-Rahman</p>
                     </div>
                   </div>
                 </div>
