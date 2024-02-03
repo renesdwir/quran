@@ -1,4 +1,4 @@
-export default function Logo(props: React.SVGProps<SVGSVGElement>) {
+export default function LogoSVG(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg {...props} version="1.0" viewBox="0 0 600 577">
       <path d="M340.5.9c-4.7 1.2-9.6 3.8-14.4 7.6-5 4-5 4 8.5 2.3 7.2-.9 10-.8 12 .1 2.2 1 2.4 1.4 1.3 2.7-.7.9-4 3-7.3 4.7l-6.1 3.2 3.7.3c6.2.5 20.2-6.5 22.9-11.4 2.7-5.1-2.4-9.4-12-10-3.1-.2-6.9 0-8.6.5z" />
