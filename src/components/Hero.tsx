@@ -1,4 +1,4 @@
-import Logo from "./icons/logo";
+import Logo from "./icons/LogoSVG";
 import { Button } from "@/components/ui/button";
 import Search from "./search/Search";
 import Link from "next/link";
