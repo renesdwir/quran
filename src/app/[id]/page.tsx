@@ -28,26 +28,24 @@ export default async function Page({ params }: { params: { id: string } }) {
   const surah: DataDetailSurah = await getSurah(id);
   return (
     <main className="">
-      <div className="">
-        <div className="max-w-6xl mx-auto">
-          <div className="md:p-10 p-4 w-full">
-            <div className="flex items-center flex-col">
-              <h1 className="font-arabic text-2xl">{surah.nama}</h1>
-              <h1 className="text-xl">{surah.namaLatin}</h1>
-              <p className="text-muted-foreground">{surah.arti}</p>
-            </div>
-            <div className="flex flex-col mt-14 gap-7 md:gap-14">
-              {surah.ayat.map((data) => (
-                <Ayah key={data.nomorAyat} ayah={data} />
-              ))}
-            </div>
-            <FooterSurah
-              suratSebelumnya={surah.suratSebelumnya}
-              suratSelanjutnya={surah.suratSelanjutnya}
-              nama={surah.namaLatin}
-              noSurah={surah.nomor}
-            />
+      <div className="max-w-6xl mx-auto">
+        <div className="md:p-10 p-4 pb-0 md:pb-0 w-full ">
+          <div className="flex items-center flex-col">
+            <h1 className="font-arabic text-2xl">{surah.nama}</h1>
+            <h1 className="text-xl">{surah.namaLatin}</h1>
+            <p className="text-muted-foreground">{surah.arti}</p>
           </div>
+          <div className="flex flex-col mt-14 gap-5 ">
+            {surah.ayat.map((data) => (
+              <Ayah key={data.nomorAyat} ayah={data} />
+            ))}
+          </div>
+          <FooterSurah
+            suratSebelumnya={surah.suratSebelumnya}
+            suratSelanjutnya={surah.suratSelanjutnya}
+            nama={surah.namaLatin}
+            noSurah={surah.nomor}
+          />
         </div>
       </div>
     </main>
