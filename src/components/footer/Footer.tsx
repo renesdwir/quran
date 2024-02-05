@@ -6,7 +6,7 @@ import { ChevronUp } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="max-w-6xl mx-auto pb-14 px-4 md:px-10 mt-5 ">
+    <footer className="max-w-6xl mx-auto pb-14 px-4 md:px-10 ">
       <div className="border-t pt-5 flex flex-col gap-5 lg:flex-row justify-between">
         <div className=" lg:w-1/3">
           <Logo />
