@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import Logo from "../Logo";
 import { ToggleThemeButton } from "../buttons/ToggleThemeButton";
@@ -5,6 +6,9 @@ import { Button } from "../ui/button";
 import { ChevronUp } from "lucide-react";
 
 export default function Footer() {
+  const handleClickScroll = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
   return (
     <footer className="max-w-6xl mx-auto pb-14 px-4 md:px-10 ">
       <div className="border-t pt-5 flex flex-col gap-5 lg:flex-row justify-between">
@@ -170,11 +174,15 @@ export default function Footer() {
         </div>
         <div className="flex flex-row items-center gap-5">
           <ToggleThemeButton />
-          <Link href={"/"}>
-            <Button variant={"outline"} className="flex flex-row items-center gap-4">
-              <ChevronUp /> <span>Back to Top</span>
-            </Button>
-          </Link>
+          {/* <Link href={"/"}> */}
+          <Button
+            onClick={handleClickScroll}
+            variant={"outline"}
+            className="flex flex-row items-center gap-4"
+          >
+            <ChevronUp /> <span>Back to Top</span>
+          </Button>
+          {/* </Link> */}
         </div>
       </div>
     </footer>
