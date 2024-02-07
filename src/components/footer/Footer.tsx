@@ -174,7 +174,6 @@ export default function Footer() {
         </div>
         <div className="flex flex-row items-center gap-5">
           <ToggleThemeButton />
-          {/* <Link href={"/"}> */}
           <Button
             onClick={handleClickScroll}
             variant={"outline"}
@@ -182,7 +181,6 @@ export default function Footer() {
           >
             <ChevronUp /> <span>Back to Top</span>
           </Button>
-          {/* </Link> */}
         </div>
       </div>
     </footer>
