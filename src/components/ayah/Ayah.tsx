@@ -21,8 +21,14 @@ export default function Ayah({ ayah }: { ayah: Ayat }) {
       </div>
       <p className="text-muted-foreground text-sm md:text-base">{ayah.teksLatin}</p>
       <p className="text-sm md:text-base">{ayah.teksIndonesia}</p>
-      <div className="flex justify-between mt-4">
-        <div className="flex gap-5">
+      <div className="flex justify-between mt-4 items-center">
+        <div className="flex gap-5 ">
+          <audio controls>
+            <source
+              src="https://equran.nos.wjv-1.neo.id/audio-partial/Misyari-Rasyid-Al-Afasi/001001.mp3"
+              type="audio/mpeg"
+            />
+          </audio>
           <WithTooltip text="Play Audio">
             <PlayCircle className="" strokeWidth={1.5} />
           </WithTooltip>
