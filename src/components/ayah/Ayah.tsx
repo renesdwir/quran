@@ -25,12 +25,7 @@ export default function Ayah({ ayah }: { ayah: Ayat }) {
       <div className="flex justify-between mt-4 items-center">
         <div className="flex gap-5 items-center">
           <AudioPlayer />
-          <audio controls>
-            <source
-              src="https://equran.nos.wjv-1.neo.id/audio-partial/Misyari-Rasyid-Al-Afasi/001001.mp3"
-              type="audio/mpeg"
-            />
-          </audio>
+
           <WithTooltip text="Copy">
             <Copy className=" " strokeWidth={1.5} />
           </WithTooltip>
