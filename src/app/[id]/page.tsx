@@ -1,4 +1,5 @@
 import Ayah from "@/components/ayah/Ayah";
+import AyahList from "@/components/ayah/AyahList";
 import FooterSurah from "@/components/footer/footerSurah";
 import { Button } from "@/components/ui/button";
 import { DataDetailSurah, ResponseListSurah } from "@/models/surah";
@@ -36,9 +37,7 @@ export default async function Page({ params }: { params: { id: string } }) {
             <p className="text-muted-foreground">{surah.arti}</p>
           </div>
           <div className="flex flex-col mt-14 gap-5 ">
-            {surah.ayat.map((data) => (
-              <Ayah key={data.nomorAyat} ayah={data} />
-            ))}
+            <AyahList surah={surah} />
           </div>
           <FooterSurah
             suratSebelumnya={surah.suratSebelumnya}
