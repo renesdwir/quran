@@ -5,6 +5,7 @@ import localFont from "next/font/local";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/footer/Footer";
+import { Toaster } from "@/components/ui/toaster";
 
 const inter = Inter({ subsets: ["latin"] });
 const arabic = localFont({
@@ -34,6 +35,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <Navbar />
             {children}
             <Footer />
+            <Toaster />
           </ThemeProvider>
         </body>
       </html>
