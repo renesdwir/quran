@@ -1,17 +1,25 @@
-"use client";
 import { Ayat } from "@/models/surah";
-import { Copy, FileText, Share2 } from "lucide-react";
+import { FileText, Share2 } from "lucide-react";
 import WithTooltip from "../Tooltip";
 import AyahFrame from "../icons/ayahFrame";
 import AudioPlayer from "../AudioPlayer";
+import CopyAyah from "./AyahCopy";
 
 interface AyahProps {
   ayah: Ayat;
   audio: { play: boolean; ayah: number };
   handleAudio: (id: number) => void;
+  noSurah: number;
+  nameSurah: string;
 }
 
-export default function Ayah({ ayah, audio, handleAudio }: AyahProps) {
+export default function Ayah({
+  ayah,
+  audio,
+  handleAudio,
+  noSurah,
+  nameSurah,
+}: AyahProps) {
   return (
     <div
       id={ayah.nomorAyat.toString()}
@@ -39,9 +47,13 @@ export default function Ayah({ ayah, audio, handleAudio }: AyahProps) {
             handleAudio={handleAudio}
             id={ayah.nomorAyat}
           />
-          <WithTooltip text="Copy">
-            <Copy className=" " strokeWidth={1.5} />
-          </WithTooltip>
+          <CopyAyah
+            textArab={ayah.teksArab}
+            textIndo={ayah.teksIndonesia}
+            noSurah={noSurah}
+            nameSurah={nameSurah}
+            noAyah={ayah.nomorAyat}
+          />
           <WithTooltip text="Tafsir">
             <FileText className=" " strokeWidth={1.5} />
           </WithTooltip>

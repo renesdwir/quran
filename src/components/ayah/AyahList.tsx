@@ -61,7 +61,14 @@ export default function AyahList({ surah }: { surah: DataDetailSurah }) {
     <>
       <audio ref={audioPlayerRef} onEnded={handleEndedAudio} />
       {surah.ayat.map((data) => (
-        <Ayah key={data.nomorAyat} ayah={data} audio={audio} handleAudio={handleAudio} />
+        <Ayah
+          key={data.nomorAyat}
+          ayah={data}
+          audio={audio}
+          handleAudio={handleAudio}
+          nameSurah={surah.namaLatin}
+          noSurah={surah.nomor}
+        />
       ))}
     </>
   );
