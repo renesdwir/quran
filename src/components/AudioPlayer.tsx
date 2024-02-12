@@ -1,4 +1,3 @@
-"use client";
 import { PlayCircle, PauseCircle } from "lucide-react";
 import WithTooltip from "./Tooltip";
 
