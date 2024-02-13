@@ -1,5 +1,5 @@
 import { Ayat } from "@/models/surah";
-import { FileText, Share2 } from "lucide-react";
+import { FileText, Share2, Bookmark } from "lucide-react";
 import WithTooltip from "../Tooltip";
 import AyahFrame from "../icons/ayahFrame";
 import AudioPlayer from "../AudioPlayer";
@@ -11,6 +11,8 @@ interface AyahProps {
   handleAudio: (id: number) => void;
   noSurah: number;
   nameSurah: string;
+  bookmark: boolean;
+  addBookmark: (surah: number) => void;
 }
 
 export default function Ayah({
@@ -19,6 +21,8 @@ export default function Ayah({
   handleAudio,
   noSurah,
   nameSurah,
+  bookmark,
+  addBookmark,
 }: AyahProps) {
   return (
     <div
@@ -56,6 +60,19 @@ export default function Ayah({
           />
           <WithTooltip text="Tafsir">
             <FileText className=" " strokeWidth={1.5} />
+          </WithTooltip>
+          <WithTooltip text="Bookmark">
+            {bookmark ? (
+              <Bookmark
+                onClick={() => {
+                  addBookmark(ayah.nomorAyat);
+                }}
+                className="fill-foreground"
+                strokeWidth={1.5}
+              />
+            ) : (
+              <Bookmark className="" strokeWidth={1.5} />
+            )}
           </WithTooltip>
         </div>
         <div>
