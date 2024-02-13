@@ -58,7 +58,7 @@ export default function AyahList({ surah }: { surah: DataDetailSurah }) {
   }
   function addBookmark(ayah: number) {
     console.log(bookmark, ayah, surah.nomor);
-    // localStorage.setItem("bookmark", JSON.stringify(bookmark))
+    localStorage.setItem("bookmark", JSON.stringify(bookmark));
   }
   useEffect(() => {
     if (global?.window !== undefined) {
