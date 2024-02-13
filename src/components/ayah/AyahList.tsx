@@ -56,7 +56,10 @@ export default function AyahList({ surah }: { surah: DataDetailSurah }) {
       audioPlayer.play();
     }
   }
-
+  function addBookmark(ayah: number) {
+    console.log(bookmark, ayah, surah.nomor);
+    // localStorage.setItem("bookmark", JSON.stringify(bookmark))
+  }
   useEffect(() => {
     if (global?.window !== undefined) {
       let temp = { 1: [1, 3, 5], 2: [1] };
@@ -83,6 +86,7 @@ export default function AyahList({ surah }: { surah: DataDetailSurah }) {
           bookmark={
             bookmark ? bookmark.findIndex((e) => e === data.nomorAyat) >= 0 : false
           }
+          addBookmark={addBookmark}
         />
       ))}
     </>
