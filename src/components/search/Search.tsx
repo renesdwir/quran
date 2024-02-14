@@ -65,10 +65,13 @@ export default async function SearchComponent({ search }: { search: string }) {
                       <MoveRight className="w-4 h-4 text-muted-foreground" />
                       <p className="text-sm">Al-Mulk</p>
                     </Link>
-                    <div className="flex items-center gap-4 hover:bg-accent  p-3 rounded-lg transition-all duration-200 cursor-pointer text-muted-foreground hover:text-accent-foreground">
+                    <Link
+                      href={"/36"}
+                      className="flex items-center gap-4 hover:bg-accent  p-3 rounded-lg transition-all duration-200 cursor-pointer text-muted-foreground hover:text-accent-foreground"
+                    >
                       <MoveRight className="w-4 h-4 text-muted-foreground" />
                       <p className="text-sm">Yasin</p>
-                    </div>
+                    </Link>
                     <div className="flex items-center gap-4 hover:bg-accent  p-3 rounded-lg transition-all duration-200 cursor-pointer text-muted-foreground hover:text-accent-foreground">
                       <MoveRight className="w-4 h-4 text-muted-foreground" />
                       <p className="text-sm">Al-Khaf</p>
