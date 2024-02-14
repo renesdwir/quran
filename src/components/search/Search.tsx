@@ -2,6 +2,7 @@ import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import InputSearch from "./InputSearch";
 import { Search, Mic, MoveRight } from "lucide-react";
 import { ResponseListSurah } from "@/models/surah";
+import Link from "next/link";
 async function getSurah() {
   const res = await fetch("https://equran.id/api/v2/surat");
   const surah: ResponseListSurah = await res.json();
@@ -50,10 +51,13 @@ export default async function SearchComponent({ search }: { search: string }) {
                 <div>
                   <span className="text-muted-foreground text-xs">Try navigating to</span>
                   <div className="mt-1">
-                    <div className="flex items-center gap-4 hover:bg-accent  p-3 rounded-lg transition-all duration-200 cursor-pointer text-muted-foreground hover:text-accent-foreground">
+                    <Link
+                      href={"/56"}
+                      className="flex items-center gap-4 hover:bg-accent  p-3 rounded-lg transition-all duration-200 cursor-pointer text-muted-foreground hover:text-accent-foreground"
+                    >
                       <MoveRight className="w-4 h-4 text-muted-foreground" />
                       <p className="text-sm">Al-Waqi'ah</p>
-                    </div>
+                    </Link>
                     <div className="flex items-center gap-4 hover:bg-accent  p-3 rounded-lg transition-all duration-200 cursor-pointer text-muted-foreground hover:text-accent-foreground">
                       <MoveRight className="w-4 h-4 text-muted-foreground" />
                       <p className="text-sm">Al-Mulk</p>
