@@ -1,12 +1,11 @@
 "use client";
 import { DataDetailSurah } from "@/models/surah";
 import Ayah from "./Ayah";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 export default function AyahList({ surah }: { surah: DataDetailSurah }) {
   let playlist = surah.ayat.map((a) => a.audio["05"]);
   const [audio, setAudio] = useState({ play: false, ayah: 0 });
-  const [bookmark, setBookmark] = useState<number[]>();
   const audioPlayerRef = useRef<HTMLAudioElement>(null);
   function handleAudio(id: number) {
     let audioPlayer = audioPlayerRef.current;
@@ -56,21 +55,6 @@ export default function AyahList({ surah }: { surah: DataDetailSurah }) {
       audioPlayer.play();
     }
   }
-  function addBookmark(ayah: number) {
-    console.log(bookmark, ayah, surah.nomor);
-    localStorage.setItem("bookmark", JSON.stringify(bookmark));
-  }
-  useEffect(() => {
-    if (global?.window !== undefined) {
-      let temp = { 1: [1, 3, 5], 2: [1] };
-      localStorage.setItem("bookmark", JSON.stringify(temp));
-      let data = window?.localStorage?.getItem("bookmark");
-      let bookmarks = JSON.parse(data!);
-      if (bookmarks) {
-        setBookmark(bookmarks[surah.nomor]);
-      }
-    }
-  }, []);
 
   return (
     <>
@@ -83,10 +67,6 @@ export default function AyahList({ surah }: { surah: DataDetailSurah }) {
           handleAudio={handleAudio}
           nameSurah={surah.namaLatin}
           noSurah={surah.nomor}
-          bookmark={
-            bookmark ? bookmark.findIndex((e) => e === data.nomorAyat) >= 0 : false
-          }
-          addBookmark={addBookmark}
         />
       ))}
     </>

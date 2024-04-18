@@ -1,9 +1,10 @@
 import { Ayat } from "@/models/surah";
-import { FileText, Share2, Bookmark } from "lucide-react";
+import { FileText, Share2 } from "lucide-react";
 import WithTooltip from "../Tooltip";
 import AyahFrame from "../icons/ayahFrame";
 import AudioPlayer from "../AudioPlayer";
 import CopyAyah from "./AyahCopy";
+import BookmarkButton from "../buttons/BookmarkButton";
 
 interface AyahProps {
   ayah: Ayat;
@@ -11,8 +12,6 @@ interface AyahProps {
   handleAudio: (id: number) => void;
   noSurah: number;
   nameSurah: string;
-  bookmark: boolean;
-  addBookmark: (surah: number) => void;
 }
 
 export default function Ayah({
@@ -21,9 +20,8 @@ export default function Ayah({
   handleAudio,
   noSurah,
   nameSurah,
-  bookmark,
-  addBookmark,
 }: AyahProps) {
+  // console.log(ayah, audio, handleAudio, noSurah, nameSurah);
   return (
     <div
       id={ayah.nomorAyat.toString()}
@@ -42,7 +40,9 @@ export default function Ayah({
           {ayah.teksArab}
         </div>
       </div>
-      <p className="text-muted-foreground text-sm md:text-base">{ayah.teksLatin}</p>
+      <p className="text-muted-foreground text-sm md:text-base">
+        {ayah.teksLatin}
+      </p>
       <p className="text-sm md:text-base">{ayah.teksIndonesia}</p>
       <div className="flex justify-between mt-4 items-center">
         <div className="flex gap-5 items-center">
@@ -62,17 +62,7 @@ export default function Ayah({
             <FileText className=" " strokeWidth={1.5} />
           </WithTooltip>
           <WithTooltip text="Bookmark">
-            {bookmark ? (
-              <Bookmark
-                onClick={() => {
-                  addBookmark(ayah.nomorAyat);
-                }}
-                className="fill-foreground"
-                strokeWidth={1.5}
-              />
-            ) : (
-              <Bookmark className="" strokeWidth={1.5} />
-            )}
+            <BookmarkButton nomorAyat={ayah.nomorAyat} />
           </WithTooltip>
         </div>
         <div>
