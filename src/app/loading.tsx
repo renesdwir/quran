@@ -1,4 +1,6 @@
+import { Loader2 } from "lucide-react";
+
 export default function Loading() {
   // You can add any UI inside Loading, including a Skeleton.
-  return <h1>LOADING......</h1>;
+  return <Loader2 className="mx-auto my-3 animate-spin" />;
 }
