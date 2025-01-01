@@ -12,7 +12,9 @@ export async function generateStaticParams() {
   return getId;
 }
 async function getSurah(id: string) {
-  const res = await fetch(`https://equran.id/api/v2/surat/${id}`);
+  const res = await fetch(`https://equran.id/api/v2/surat/${id}`, {
+    cache: "force-cache",
+  });
   const surah = await res.json();
   return surah.data;
 }

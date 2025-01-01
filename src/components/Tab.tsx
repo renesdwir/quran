@@ -2,9 +2,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Bookmark from "./Bookmark";
 import RecentlyRead from "./RecentlyRead";
 import SurahList from "./surah/SurahList";
-import { Suspense } from "react";
 
-export default function MultiTabs() {
+export default function MultiTabs({ surah }: { surah: any[] }) {
   return (
     <div className="max-w-6xl mx-auto">
       <Tabs defaultValue="alquran" className="md:p-10 p-4 md:pb-0 pb-0 w-full">
@@ -14,9 +13,7 @@ export default function MultiTabs() {
           <TabsTrigger value="bookmarks">Bookmarks</TabsTrigger>
         </TabsList>
         <TabsContent value="alquran" className="mt-4">
-          <Suspense fallback="Loading...">
-            <SurahList />
-          </Suspense>
+          <SurahList datas={surah} />
         </TabsContent>
         <TabsContent value="recentlyread">
           <RecentlyRead />
