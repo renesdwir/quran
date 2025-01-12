@@ -1,10 +1,13 @@
 "use client";
 import { DataDetailSurah } from "@/models/surah";
 import Ayah from "./Ayah";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function AyahList({ surah }: { surah: DataDetailSurah }) {
   let playlist = surah.ayat.map((a) => a.audio["05"]);
+  const router = useRouter();
+
   const [audio, setAudio] = useState({ play: false, ayah: 0 });
   const audioPlayerRef = useRef<HTMLAudioElement>(null);
   function handleAudio(id: number) {
@@ -55,6 +58,23 @@ export default function AyahList({ surah }: { surah: DataDetailSurah }) {
       audioPlayer.play();
     }
   }
+
+  useEffect(() => {
+    // Ambil hash dari URL
+    const hash = window.location.hash;
+    if (hash) {
+      const id = hash.substring(1);
+      const section = document.getElementById(id);
+      if (section) {
+        const sectionTop = section.offsetTop - 20;
+        window.scrollTo({
+          top: sectionTop,
+          behavior: "smooth",
+        });
+        history.replaceState(null, "", window.location.pathname);
+      }
+    }
+  }, [router]); // Akan trigger ulang jika router berubah
 
   return (
     <>

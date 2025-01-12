@@ -5,6 +5,7 @@ import AyahFrame from "../icons/ayahFrame";
 import AudioPlayer from "../AudioPlayer";
 import CopyAyah from "./AyahCopy";
 import BookmarkButton from "../buttons/BookmarkButton";
+import useBookmark from "@/hooks/useBookmark";
 
 interface AyahProps {
   ayah: Ayat;
@@ -21,7 +22,17 @@ export default function Ayah({
   noSurah,
   nameSurah,
 }: AyahProps) {
-  // console.log(ayah, audio, handleAudio, noSurah, nameSurah);
+  const id = noSurah.toString() + "-" + ayah.nomorAyat.toString();
+
+  const { bookmark, setBookmark } = useBookmark({ id });
+  const handleBookmark = () => {
+    setBookmark({
+      id,
+      nameSurah,
+      ...ayah,
+    });
+  };
+
   return (
     <div
       id={ayah.nomorAyat.toString()}
@@ -62,7 +73,7 @@ export default function Ayah({
             <FileText className=" " strokeWidth={1.5} />
           </WithTooltip>
           <WithTooltip text="Bookmark">
-            <BookmarkButton nomorAyat={ayah.nomorAyat} />
+            <BookmarkButton bookmark={bookmark} onBookmark={handleBookmark} />
           </WithTooltip>
         </div>
         <div>
